@@ -22,6 +22,6 @@ If we view the ```HTML``` source code, specifically the form area, we'll see tha
 
 This is the file that our password is getting checked against.
 
-If we navigate to the ```password.php``` at https://www.hackthissite.org/missions/basic/3/password.php we'll see the password needed to solve this level.
+If we navigate to the ```password.php``` file at https://www.hackthissite.org/missions/basic/3/password.php we'll see the password needed to solve this level.
 
 ```9ec995dd```
