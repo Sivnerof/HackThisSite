@@ -52,6 +52,6 @@ The output from the above command will show us the contents of ```https://www.ha
 Hi, au12ha39vc.php index.php level8.php tmp! Your name contains 39 characters.
 ```
 
-Now all we have to do to is read the password by visiting this file at ```https://www.hackthissite.org/missions/basic/8/au12ha39vc.php``` where we'll see the following.
+Now all we have to do is read the password by visiting this file at ```https://www.hackthissite.org/missions/basic/8/au12ha39vc.php``` where we'll see the following.
 
 ```e06a9c6f```
