@@ -53,8 +53,7 @@ function checkpassw(moo)
 
 We can verify that this code is irrelevant and exists only as a decoy by breaking it down line by line, or by quickly scanning for wether the ```checkpass``` function is defined here (there is a  mention of ```checkpass``` but it's called within another function called ```checkpassw```, which is **never** called).
 
-```html
-<script language="javascript">
+```js
 RawrRawr = "moo";
 function check(x) // x = ???, check is NEVER called in this challenge.
 {
@@ -73,7 +72,6 @@ function checkpassw(moo) // moo = ???, this function is NEVER called.
     RawrRawr = moo; // RawrRawr = ???, moo is never passed in.
     checkpass(RawrRawr); // The real password checking function, but it's never called.
 }
-</script>
 ```
 
 Now that we're done looking through the decoy program we can go back to the first ```<script>``` tag we found.
