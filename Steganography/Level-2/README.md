@@ -6,7 +6,7 @@
 
 ## Writeup
 
-For this challenge, the only hint we're given comes in the form of a question. We're asked "did I hear that correctly?", so it's probably safe to assume that this challenge involves [audio stegonography](https://www.tutorialspoint.com/what-is-audio-steganography "Tutorials Point Article On Audio Stegonagraphy").
+For this challenge, the only hint we're given comes in the form of a question. We're asked "did I hear that correctly?", so it's probably safe to assume that this challenge involves [audio steganography](https://www.tutorialspoint.com/what-is-audio-steganography "Tutorials Point Article On Audio Steganography").
 
 No file was given to us this level, so we'll start by inspecting the HTML source code for this page, obviously something is missing. If we look at the code around the password submit button we'll find an ```<embed>``` tag that never loaded in.
 
