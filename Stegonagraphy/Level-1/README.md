@@ -66,4 +66,42 @@ If we break this collection of bits into bytes (groups of 8) we'll notice we're 
 * 11100110
 * **0110110 <-- Missing Bit**
 
-Honestly, this is where I got stuck and needed to look online for help. After looking around I was able to find a video from a guy named Chuck Moore. He 
+If we try to pad the end with an extra 0, we're left with the following.
+
+```00111000 01100110 01101110 11010000 11000010 11100110 01101100```
+
+The problem with this is that if we try to convert this to text with a [binary to text converter](https://www.rapidtables.com/convert/number/binary-to-ascii.html "Binary To Text Converter") we'll receive the following output.
+
+```8fn���l```
+
+This output can't possibly be our password, and this is honestly where I got stuck. After looking up help for this problem I found a video by a guy named Chuck Moore who covered the [solution for this challenge on YouTube](https://www.youtube.com/watch?v=fK3pmCKEB5I "Chuck Moores Walkthrough For This Challenge").
+
+Apparently the missing bit is added to the second byte. Something that had to be found out through trial and error of appending the missing bit to different bytes at the start and end, a 0 or 1, and testing the output of the binary converted to text. Finally hitting on adding a 0 at the start of the second byte.
+
+* 00111000
+* **01100110 <-- Missing Bit**
+* 01101110
+* 11010000
+* 11000010
+* 11100110
+* 0110110
+
+So, we'll add the 0 bit to the start of the second byte and shift over the last bit of every bite until we have the correct bytes.
+
+**Correct Byte Order -**
+
+* 00111000
+* 00110011
+* 00110111
+* 01101000
+* 01100001
+* 01110011
+* 00110110
+
+```00111000 00110011 00110111 01101000 01100001 01110011 00110110```
+
+Now, we can convert to text with the [binary to text converter](https://www.rapidtables.com/convert/number/binary-to-ascii.html "Binary To Text Converter") we used earlier. The output will be the following.
+
+```837has6```
+
+Once we provide ```837has6``` as the password for level 1, the challenge will be completed succesfully.
