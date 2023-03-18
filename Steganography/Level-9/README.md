@@ -20,43 +20,117 @@ Once you view the spectogram, you'll notice some really strange markings.
 
 These markings alternate between two distinct types, short or long. The bars are either razor thin or a bit thick. Better yet, these bars and markings look like dots and dashes.
 
-By now, you should probably realize these markings are really morse code, they're also broken into groups of 5.
+By now, you should probably realize these markings are really [morse code](https://en.wikipedia.org/wiki/Morse_code "Wikipedia Entry On Morse Code"). We can translate the morse code using online tools like [Cyber Chef](https://cyberchef.org/ "Cyber Chef Tool") or we can convert the morse by hand with the tables I provided below.
+
+| **LETTER** | **MORSE CODE** |
+|:----------:|:--------------:|
+| A          | .-             |
+| B          | -...           |
+| C          | -.-.           |
+| D          | -..            |
+| E          | .              |
+| F          | ..-.           |
+| G          | --.            |
+| H          | ....           |
+| I          | ..             |
+| J          | .---           |
+| K          | -.-            |
+| L          | .-..           |
+| M          | --             |
+| N          | -.             |
+| O          | ---            |
+| P          | .--.           |
+| Q          | --.-           |
+| R          | .-.            |
+| S          | ...            |
+| T          | -              |
+| U          | ..-            |
+| V          | ...-           |
+| W          | .--            |
+| X          | -..-           |
+| Y          | -.--           |
+| Z          | --..           |
 
 
-**EVERYTHING BELOW THIS LINE IS UNIFNISHED, WILL FINISH TOMORROW**
+| **NUMBER** | **MORSE CODE** |
+|:----------:|:--------------:|
+| 0          | -----          |
+| 1          | .----          |
+| 2          | ..---          |
+| 3          | ...--          |
+| 4          | ....-          |
+| 5          | .....          |
+| 6          | -....          |
+| 7          | --...          |
+| 8          | ---..          |
+| 9          | ----.          |
 
----
+| **PUNCTUATION** | **MORSE CODE** |
+|:---------------:|:--------------:|
+| .               | .-.-.-         |
+| ;               | -.-.-.         |
+| /               | -..-.          |
+| '               | .----.         |
+| -               | -....-         |
+| :               | ---...         |
+| ,               | --..--         |
+| ?               | ..--..         |
 
-```.---- ----- --... ..... -....```
+Something else you may notice is that all the morse code found in the spectograms is grouped into sections of five, so we won't need the alphabet or punctuation tables above. These are all numbers.
+
+| **NUMBER** | **MORSE CODE** |
+|:----------:|:--------------:|
+| 0          | -----          |
+| 1          | .----          |
+| 2          | ..---          |
+| 3          | ...--          |
+| 4          | ....-          |
+| 5          | .....          |
+| 6          | -....          |
+| 7          | --...          |
+| 8          | ---..          |
+| 9          | ----.          |
+
+Looking at the each part of the spectogram we'll see the following morse code.
 
 ![Spectogram Start](./spectogram-start.png "Start Of Spectogram")
 
-```.---- ..--- ----- ....-```
+**Morse -** ```.---- ----- --... ..... -....```
 
 ![Spectogram Section 2](./spectogram-2.png "Spectogram Section 2")
 
-```---.. .---- .---- ----.```
+**Morse -** ```.---- ..--- ----- ....-```
 
 ![Spectogram Section 3](./spectogram-3.png "Spectogram Section 3")
 
-```..... ...-- ----. ---..```
+**Morse -** ```---.. .---- .---- ----.```
 
 ![Spectogram Section 4](./spectogram-4.png "Spectogram Section 4")
 
-```----. ---.. .---- .----```
+**Morse -** ```..... ...-- ----. ---..```
 
 ![Spectogram Section 5](./spectogram-5.png "Spectogram Section 5")
 
-```--... .---- .---- ...--```
+**Morse -** ```----. ---.. .---- .----```
 
 ![Spectogram Section End](./spectogram-end.png "End Of Spectogram")
+
+**Morse -** ```--... .---- .---- ...--```
+
+Putting it all together we get the following morse code.
 
 ```
 .---- ----- --... ..... -.... .---- ..--- ----- ....- ---.. .---- .---- ----. ..... ...-- ----. ---.. ----. ---.. .---- .---- --... .---- .---- ...--
 ```
 
-```1075612048119539898117113```
+After conversion we'll get this series of numbers ```1075612048119539898117113```, but if we submit these numbers as the password for this level we'll fail the challenge. Apparently, we have one more step to go.
+
+Since we have a series of decimal numbers we can try converting them to [ASCII](https://en.wikipedia.org/wiki/ASCII "Wikipedia Entry For ASCII") but we'll need to break this series down into logical groups.
+
+Assuming we're only using the ASCII range ```33-126``` we'll get the following numbers.
 
 ```107 56 120 48 119 53 98 98 117 113```
+
+Converting those to decimal values to ASCII we'll finally get the following password.
 
 ```k8x0w5bbuq```
