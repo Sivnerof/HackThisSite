@@ -1,3 +1,6 @@
+# This code was taken from Wikipedia page for the Affine Cipher.
+# I changed the last line to work for the hackthissite level 14 steganography challenge.
+
 # Prints a transposition table for an affine cipher.
 # a must be coprime to m=26.
 def affine(a: int, b: int) -> None:
