@@ -101,9 +101,9 @@ if ($passed==TRUE)
 **Lines 18-21:** The ```isAuthed``` function is defined. This is the function that was called earlier in the script to check if we were authenticated. The function takes the values from ```$user``` and ```$pass```, but never does anything with them. The function **ALWAYS** returns ```FALSE```.
 
 ```php
-function isAuthed($a,$b) // $a = $user, $b = $pass
+function isAuthed($a,$b)
 {
-        return FALSE; // Always Returns False
+        return FALSE;
 }
 ```
 
@@ -115,4 +115,22 @@ function isAuthed($a,$b) // $a = $user, $b = $pass
 
 Now that we have a detailed breakdown of how the program operates it's easier to understand the vulnerability.
 
-**Unfinished Writeup**
+Due to the ```isAuthed``` function always returning ```FALSE```, the ```$passed``` variable is never initialized. The whole code block is skipped, going straight to the conditional that checks wether ```$passed``` is equal to ```TRUE```.
+
+We'll exploit this and create a new variable named ```passed``` by tampering with the URL.
+
+Since the conditional is using loose comparison (```==```) to check if ```$passed``` is equal to ```TRUE``` we can use any of the following URLs (and more) to bypass the authentication function and complete this challenge.
+
+```http://moo.com/me.php?passed=TRUE```
+
+```http://moo.com/me.php?passed=true```
+
+```http://moo.com/me.php?passed=false```
+
+```http://moo.com/me.php?passed=FALSE```
+
+```http://moo.com/me.php?passed=1```
+
+```http://moo.com/me.php?passed=abc```
+
+```http://moo.com/moo.php?user=john&pass=password&passed=TRUE```
